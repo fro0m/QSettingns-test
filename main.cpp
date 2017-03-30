@@ -15,5 +15,5 @@ int main(int argc, char *argv[])
     QString value = s.readLine();
     settingsManager.setUserName(value);
 
-    return a.exec();
+    return 0/*a.exec()*/;
 }

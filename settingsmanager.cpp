@@ -12,11 +12,15 @@ SettingsManager::SettingsManager()
 QString SettingsManager::getUserName() const
 {
     QSettings settings;
+    settings.beginGroup("user");
     return settings.value("username", "no name has been set").toString();
+    settings.endGroup();
 }
 
 void SettingsManager::setUserName(const QString &t_name)
 {
     QSettings settings;
+    settings.beginGroup("user");
     settings.setValue("username", QVariant::fromValue<QString>(t_name));
+    settings.endGroup();
 }
